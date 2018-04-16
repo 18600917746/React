@@ -4,58 +4,51 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import PropTypes from 'prop-types';
 
-// 模板声明的第二种方式
-class Clock extends Component {
-    //默认熟悉属性
-    static defaultProps = {
-        name: '默认属性',
-        age: 1
-    }
-    //属性 类型与是否必传
-    static propTypes = {
-        name: PropTypes.string,
-        age: PropTypes.number.isRequired
-    }
-
+/**
+ * TODO： 1.学习 表单的双向绑定
+ *        2.表单 值得获取
+ *
+ */
+class Input extends Component {
     constructor() {
         super();
-        //状态只能内部声明，内部引用,用于操作可以改变的值
         this.state = {
-            time: new Date().toLocaleString(),
-            happy: true
+            a: 0,
+            b: 0,
+            result: 0
         }
     }
 
-    //模板生命钩子
-    componentDidMount() {
-        window.setInterval(() => {
-            this.setState({
-                time: new Date().toLocaleString()
-            })
-        }, 1000);
-    }
-
-    //函数
-    changeFun = () => {
+    inputA = (event) => {
+        let a = Number(event.target.value);
+        let b = Number(this.state.b)
         this.setState({
-            happy: !this.state.happy
+            a,
+            result: a + b
+        })
+
+    }
+    inputB = (event) => {
+        let b = Number(event.target.value);
+        let a = Number(this.state.a)
+        this.setState({
+            b,
+            result: a + b
         })
     }
 
     render() {
-        let sta = this.state.happy ? '开心' : '难过';
         return (
             <div>
-                <h2>{this.state.time}</h2>
-                <h2>{this.props.name}</h2>
-                <h2>心情：{sta}</h2>
-                <button onClick={this.changeFun}>改变</button>
+                <input type="text" onChange={this.inputA} value={this.state.a}/>+
+                <input type="text" onChange={this.inputB} value={this.state.b}/>=
+                <input type="text" value={this.state.result}/>
             </div>
-        )
+        );
     }
 }
 
 // 属性的传递  this.props.属性名
-render(<Clock name={"传递的属性"}/>, window.app);
+render(<Input/>, window.app);
 
 registerServiceWorker();

@@ -11,5 +11,6 @@
     <orderEntry type="library" name="@types/react" level="application" />
     <orderEntry type="library" name="@types/bootstrap" level="application" />
     <orderEntry type="library" name="@types/react-bootstrap" level="application" />
+    <orderEntry type="library" name="@types/react-native" level="application" />
   </component>
 </module>

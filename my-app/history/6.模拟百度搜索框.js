@@ -57,6 +57,7 @@ export default class Suggest extends Component {
     handleKeyDown = (event) => {
 
         let keyCode = event.keyCode;
+        console.log(keyCode);
         if (keyCode === 40 || keyCode === 38) {
             let index = this.state.index;
             if (keyCode === 38) {
@@ -91,7 +92,6 @@ export default class Suggest extends Component {
                             <div className="panel panel-default">
                                 <div className="panel-hading">
                                     <input type="text"
-                                           ref='input'
                                            onChange={this.handleChange}
                                            onKeyDown={this.handleKeyDown}
                                            value={this.state.name}

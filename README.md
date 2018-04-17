@@ -94,4 +94,67 @@
         }
     }
 
-# 事件
+> 组件
+>> 受控组件
+
+    class Input extends Component {
+        constructor() {
+            super();
+            this.state = {
+                a: 0,
+                b: 0,
+                result: 0
+            }
+        }
+
+        inputA = (event) => {
+            let a = Number(event.target.value);
+            let b = Number(this.state.b)
+            this.setState({
+                a,
+                result: a + b
+            })
+
+        }
+        inputB = (event) => {
+            let b = Number(event.target.value);
+            let a = Number(this.state.a)
+            this.setState({
+                b,
+                result: a + b
+            })
+        }
+
+        render() {
+            return (
+                <div>
+                    <input type="text" onChange={this.inputA} value={this.state.a}/>+
+                    <input type="text" onChange={this.inputB} value={this.state.b}/>=
+                    <input type="text" value={this.state.result}/>
+                </div>
+            );
+        }
+    }
+
+>> 非受控组件 - DOM 节点操作
+
+    uninput = (event) => {
+        let uninputA = this.refs.uninputA.value;
+        let uninputB = this.refs.uninputB.value;
+        this.refs.result.value = parseInt(uninputA || 0) + parseInt(uninputB || 0);
+    }
+     <div onChange={this.uninput}>
+         <h1>非受控组件的节点操作</h1>
+         <input type="text" ref={'uninputA'}/>
+         <input type="text" ref={'uninputB'}/>
+         <input type="text" ref={'result'}/>
+     </div>
+
+>> 复合组件
+
+    react 是单向数据流，只能父类传给子类 this.porps 传递
+
+# 生命钩子
+> 组件挂载之前
+
+

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 import PropTypes from 'prop-types';
 
 /**
@@ -68,4 +66,3 @@ class Clock extends Component {
 // 属性的传递  this.props.属性名
 render(<Clock name={"传递的属性"}/>, window.app);
 
-registerServiceWorker();

@@ -2,6 +2,9 @@
 >安装 cli
 
     cnpm install -g create-react-app
+> 创建项目
+
+    create-react-app my-react
 > 启动服务
 
     npm start
@@ -154,7 +157,12 @@
 
     react 是单向数据流，只能父类传给子类 this.porps 传递
 
-# 生命钩子
+## 生命钩子
 > 组件挂载之前
+
+##  组件传参
+>  所有组件的数据只能由父类派发，不能向上，不能隔代。
+
+>   若是想同级传参或传给父类，只能通过父类派发函数，子类触发进行参数传递 
 
 

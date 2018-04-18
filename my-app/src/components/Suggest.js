@@ -19,7 +19,7 @@ export default class Suggest extends Component {
             index: -1
         }
     }
-
+    
     //通过生命钩子接收组件文件传递的值
     componentDidMount() {
         this.setState({

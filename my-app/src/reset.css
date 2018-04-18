@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/*去掉chrome 浏览器 input textarea 获取焦点后边框*/
+input, button, select, textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}

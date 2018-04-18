@@ -7,7 +7,6 @@ import jsonp from 'jsonp'
  * 1.使用 map() 函数 输出 数组 数据 并添加 key
  * 2.使用第三方jsonp模块
  * 3.事件使用
- * 4.
  * */
 
 export default class Suggest extends Component {
@@ -69,7 +68,9 @@ export default class Suggest extends Component {
             } else if (index === this.state.list.length) {
                 index = -1;
             }
-            let name = index === -1 ? this.val : this.state.list[index];
+            let val = this.val || this.props.name;
+            let name = index === -1 ? val : this.state.list[index];
+
             this.setState({
                 index,
                 name

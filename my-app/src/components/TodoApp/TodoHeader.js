@@ -14,24 +14,17 @@ export default class TodoHeader extends Component {
         if (keycode === 13) {
             event.preventDefault();
             this.props.addTodoList(val);
+            event.target.value = '';
         }
 
-    }
-    handelChange = (event) => {
-        let val = event.target.value;
-
-        this.setState({
-            val
-        })
-        console.log(this.state.val);
     }
 
     render() {
         return (
             <form>
                 <div className="form-group">
-                    <input autoFocus={true} onKeyDown={this.handelKeyDown} onChange={this.handelChange} type="text"
-                           className={'form-control'} value={this.state.val}/>
+                    <input autoFocus={true} onKeyDown={this.handelKeyDown} type="text"
+                           className={'form-control'}/>
                 </div>
             </form>
         )

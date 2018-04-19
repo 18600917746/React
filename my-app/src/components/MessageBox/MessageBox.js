@@ -38,7 +38,7 @@ export default class MessageBox extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container' style={{marginTop:20}}>
                 <div className="row">
                     <div className="col-sm-8 col-sm-offset-2">
                         <div className="panel panel-default">
